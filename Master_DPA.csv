@@ -1,0 +1,315 @@
+Kode_Rekening,Uraian_Kegiatan,Vol_Rencana,Satuan_Rencana,Anggaran_Rencana,Sumber_Dana
+1.1.01.5.1.1.01.,01. Penghasilan Tetap Kepala Desa,12,Ls,"31.452.000,00",ADD
+1.1.01.5.1.1.02.,01. Tunjangan Jabatan Kepala Desa,12,Ls,"7.200.000,00",ADD
+1.1.02.5.1.2.01.01,01. Penghasilan Tetap Sekretaris Desa,12,Tahun,"28.830.000,00",ADD
+1.1.02.5.1.2.01.02,02. Penghasilan Tetap Kaur Keuangan,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.03,03. Penghasilan Tetap Kaur Perencanaan,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.04,04. Penghasilan Tetap Kaur Tata Usaha dan Umum,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.05,05. Penghasilan Tetap Kasi Kesejahteraan,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.06,06. Penghasilan Tetap Kasi Pemerintahan,11,Bulan,"24.024.000,00",ADD
+1.1.02.5.1.2.01.07,07. Penghasilan Tetap Kasun Blok A,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.08,08. Penghasilan Tetap Kasun Blok B,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.09,09. Penghasilan Tetap Kasun Blok C,12,Bulan,"26.208.000,00",ADD
+1.1.02.5.1.2.01.10,10. Penghasilan Tetap Kasi Pelayanan,11,Bulan,"24.024.000,00",ADD
+1.1.02.5.1.2.02.,01. Tunjangan Jabatan 10 Orang Perangkat Desa,1,Ls,"26.000.000,00",ADD
+1.1.03.5.1.3.02.,01. Jaminan Kesehatan Perangkat Desa,1,Tahun,"3.383.000,00",ADD
+1.1.03.5.1.3.03.,01. Jaminan Ketenagakerjaan dan JHT Kepala Desa,1,Ls,"1.333.572,00",ADD
+1.1.03.5.1.3.04.01,01. Jaminan Ketenagakerjaan Perangkat Desa,1,Tahun,"1.405.852,00",ADD
+1.1.03.5.1.3.04.02,01. Jaminan Hari Tua Perangkat Desa,1,Tahun,"9.632.358,00",ADD
+1.1.03.5.1.3.04.03,01. Jaminan Pensiun Perangkat Desa,1,Tahun,"4.682.520,00",ADD
+1.1.04.5.2.1.01.01,ATK ADD- 01. Bolpoin Hitam,12,Pack,"540.000,00",ADD
+1.1.04.5.2.1.01.02,ATK ADD- 02. Kertas F4,26,rim,"1.508.000,00",ADD
+1.1.04.5.2.1.01.03,ATK ADD- 03. Tinta Epson,12,Botol,"1.176.000,00",ADD
+1.1.04.5.2.1.01.04,ATK ADD- 04. Fotocopy,2,lembar,600,ADD
+1.1.04.5.2.1.01.05,ATK ADD- 05. Buku bergaris,7,Lembar,"140.000,00",ADD
+1.1.04.5.2.1.01.06,ATK ADD- 06. Stofmap,16,bh,"24.000,00",ADD
+1.1.04.5.2.1.01.07,Materai Pos dan Giro ADD - 01. Cek Giro Bank Jatim,40,Lembar,"480.000,00",ADD
+1.1.04.5.2.1.01.08,Materai Pos dan Giro ADD - 02. Materai Pos 10000,52,Lembar,"520.000,00",ADD
+1.1.04.5.2.1.01.09,01. Materai Pos dan Cek Giro BHP,1,Ls,"2.400.000,00",PBH
+1.1.04.5.2.1.01.10,01. ATK BHP,1,Ls,"5.794.000,00",PBH
+1.1.04.5.2.1.01.11,01. ATK SDLL,1,Ls,"430.350,00",DLL
+1.1.04.5.2.1.01.12,01. ATK SPADL,1,Ls,"250.000,00",PAD
+1.1.04.5.2.1.03.01,Peralatan Rumah Tangga Pemdes - 01. Sapu Lantai,3,bh,"60.000,00",PBH
+1.1.04.5.2.1.03.02,Peralatan Rumah Tangga Pemdes - 02. Sapu Lidi,3,bh,"45.000,00",PBH
+1.1.04.5.2.1.03.03,Peralatan Rumah Tangga Pemdes - 03. PEL,1,BH,"29.000,00",PBH
+1.1.04.5.2.1.03.04,Peralatan Rumah Tangga Pemdes - 04. SULAK,2,BH,"16.000,00",PBH
+1.1.04.5.2.1.03.05,Peralatan Rumah Tangga Pemdes - 05. PEMBERSIH KAMAR MANDI,2,BH,"30.000,00",PBH
+1.1.04.5.2.1.03.06,Peralatan Rumah Tangga Pemdes - 06. PEMBERSIH LANTAI,3,BH,"45.000,00",PBH
+1.1.04.5.2.1.03.07,Peralatan Rumah Tangga Pemdes - 07. SABUN CUCI PIRING,2,BH,"20.000,00",PBH
+1.1.04.5.2.1.03.08,Peralatan Rumah Tangga Pemdes - 08. SAPU SAWANG PANJANG,1,BH,"30.000,00",PBH
+1.1.04.5.2.1.03.09,Peralatan Rumah Tangga Pemdes - 09. ISI GAS LPG,2,Kali,"46.000,00",PBH
+1.1.04.5.2.1.03.10,Peralatan Rumah Tangga Pemdes - 10. Solar,20,Liter,"160.000,00",PBH
+1.1.04.5.2.1.03.11,Peralatan Rumah Tangga Pemdes - 11. Pewangi Ruangan,8,bh,"160.000,00",PBH
+1.1.04.5.2.1.03.12,Peralatan Rumah Tangga Pemdes - 14. Ember Sedang,2,bh,"30.000,00",PBH
+1.1.04.5.2.1.03.13,Peralatan Rumah Tangga Pemdes - 15. Sikat WC,2,bh,"30.000,00",PBH
+1.1.04.5.2.1.03.14,Peralatan Rumah Tangga Pemdes - 16. Tempat Sampah Besar,1,bh,"200.000,00",PBH
+1.1.04.5.2.1.03.15,Peralatan Rumah Tangga Pemdes - 17. Keranjang Sampah Bambu,1,bh,"40.000,00",PBH
+1.1.04.5.2.1.03.16,Peralatan Rumah Tangga Pemdes - 20. Gayung,2,bh,"20.000,00",PBH
+1.1.04.5.2.1.03.17,Peralatan Rumah Tangga Pemdes - 22. Spons Cuci Piring,3,bh,"9.000,00",PBH
+1.1.04.5.2.1.03.18,Peralatan Rumah Tangga Pemdes - 23. Pembersih Closet,2,bh,"30.000,00",PBH
+1.1.04.5.2.2.05.,01. Jasa Honorarium Petugas Pajak PBB,1,Ls,"12.000.000,00",PBH
+1.1.04.5.2.3.01.,01. Perjalanan Dinas Dalam Kabupaten,1,Ls,"2.118.000,00",PBH
+1.1.04.5.2.3.02.01,01. Perjalanan Dinas Luar Kabupaten,1,Tahun,"500.000,00",PBH
+1.1.04.5.2.5.01.01,01. Jasa Langganan Listrik Kantor Desa,12,Bulan,"1.230.000,00",ADD
+1.1.04.5.2.5.07.01,01. Pajak Kendaraan Dinas,1,Ls,"400.000,00",PAD
+1.1.04.5.2.5.07.02,02. Pajak PBB di Luar Bengkok,1,Ls,"482.000,00",PAD
+1.1.04.5.2.1.06.,01. Air Minum Tamu (1 Bulan 3 Dus),36,Dus,"810.000,00",PBH
+1.1.04.5.2.3.02.02,Biaya Perjalanan Dinas ADD - 01. Biaya Perjalanan Dinas,1,Tahun,"338.000,00",ADD
+1.1.04.5.2.5.01.02,01. Biaya Langganan Listrik Kantor Desa BHPR,12,Bulan,"1.230.000,00",PBH
+1.1.04.5.2.1.01.13,ATK SADD - 01. Tinta Stempel,5,Ls,"65.000,00",ADD
+1.1.04.5.2.1.01.14,ATK SADD - 02. Tinta Stemped Yamura,2,bh,"30.000,00",ADD
+1.1.04.5.2.1.01.15,ATK SADD - 03. Sticky Note Bsr,4,bh,"44.000,00",ADD
+1.1.04.5.2.1.01.16,ATK SADD - 04. Stiky Note Kcl,3,Pack,"27.000,00",ADD
+1.1.04.5.2.1.01.17,ATK SADD - 05. Lem Stick,7,bh,"49.000,00",ADD
+1.1.04.5.2.1.01.18,ATK SADD - 06. Penghapus,2,bh,"7.000,00",ADD
+1.1.05.5.1.4.01.01,01. Ketua,12,Bulan,"10.800.000,00",ADD
+1.1.05.5.1.4.01.02,02. Wakil Ketua,12,Bulan,"9.600.000,00",ADD
+1.1.05.5.1.4.01.03,03. Sekretaris,12,bulan,"8.400.000,00",ADD
+1.1.05.5.1.4.01.04,04. Anggota,2,Orang,"14.400.000,00",ADD
+1.1.06.5.2.1.01.,01. ATK dan Benda Pos BPD,1,Ls,"720.000,00",ADD
+1.1.06.5.2.1.06.,01. Konsumsi Rapat BPD,1,Ls,"3.380.000,00",ADD
+1.1.06.5.2.1.07.,01. BPJS Ketenagakerjaan BPD,1,Ls,"822.000,00",ADD
+1.1.06.5.2.1.09.,01. Seragam BPD,5,Bh,"1.500.000,00",ADD
+1.1.06.5.2.3.01.,01. Perjalanan Dinas Dalam Kabupaten,1,Ls,"1.150.000,00",ADD
+1.1.06.5.2.3.02.01,01. Perjalanan Dinas Luar Kabupaten ADD,1,Ls,"3.250.000,00",ADD
+1.1.06.5.2.3.02.02,01. Perjalanan Dinas Luar Kabupaten SADD,1,Ls,"1.601.500,00",ADD
+1.1.07.5.2.5.08.,01. Insentif / Operasional RT RW,21,Orang,"21.747.600,00",ADD
+1.1.07.5.2.1.07.,01. BPJS Ketenagakerjaan RT RW,21,Orang,"3.452.400,00",ADD
+1.1.08.5.2.1.05.01,01. Fotocopy Undangan,500,Lembar,"175.000,00",DDS
+1.1.08.5.2.1.05.02,02. Amplop Besar Undangan,1,box,"29.000,00",DDS
+1.1.08.5.2.1.06.01,01. Tumpeng Panggang,2,bh,"600.000,00",DDS
+1.1.08.5.2.1.06.02,02. Air Mineral 330ml,22,Dus,"924.000,00",DDS
+1.1.08.5.2.1.06.03,03. Buah,1,Paket,"250.000,00",DDS
+1.1.08.5.2.1.08.,"01. Benner Ukuran 3,5m x 2,5m",1,bh,"250.000,00",DDS
+1.1.08.5.2.2.05.,01. Bisyaroh Imam Tahlil dan Imam Doa bersama,2,Orang,"500.000,00",DDS
+1.1.08.5.2.4.02.,01. Sewa Sound Sistem,1,Paket,"1.500.000,00",DDS
+1.1.08.5.2.1.06.04,01. Rapat Karangtaruna 3 Kali Pertemuan @30 orang,90,kotak,"900.000,00",DDS
+1.1.08.5.2.1.06.05,02. Air Mineral,2,dus,"100.000,00",DDS
+1.1.08.5.2.1.90.,01. Hadiah Lomba Agustusan,1,Ls,"2.000.000,00",DDS
+1.1.90. 5.1.1.02.,01. Tambahan Tunjangan Kepala Desa,12,Bln,"114.000.000,00",PAD
+1.1.91.5.1.2.99.01,01. Tambahan Tunjangan Sekretaris Desa,12,Bulan,"45.600.000,00",PAD
+1.1.91.5.1.2.99.02,02. Tambahan Tunjangan Kaur Keuangan,12,Bulan,"34.200.000,00",PAD
+1.1.91.5.1.2.99.03,03. Tambahan Tunjangan Kaur Perencanaan,12,Bulan,"34.200.000,00",PAD
+1.1.91.5.1.2.99.04,04. Tambahan Tunjangan Kaur Tata Usaha dan Umum,12,Bulan,"34.200.000,00",PAD
+1.1.91.5.1.2.99.05,05. Tambahan Tunjangan Kasi Kesejahteraan,12,Bulan,"34.200.000,00",PAD
+1.1.91.5.1.2.99.06,06. Tambahan Tunjangan Kasi Pemerintahan,11,Bulan,"31.350.000,00",PAD
+1.1.91.5.1.2.99.07,07. Tambahan Tunjangan Kasun Blok A,12,Bulan,"39.900.000,00",PAD
+1.1.91.5.1.2.99.08,08. Tambahan Tunjangan Kasun Blok B,12,Bulan,"39.900.000,00",PAD
+1.1.91.5.1.2.99.09,09. Tambahan Tunjangan Kasun Blok C,12,Bulan,"39.900.000,00",PAD
+1.1.91.5.1.2.99.10,01. Tunjangan Hari Raya 10 Perangkat desa,10,Orang,"15.000.000,00",ADD
+1.1.91.5.1.2.99.11,01. Tambahan Tunjangan Kasi Pelayanan Februari Maret,2,Bulan,"2.850.000,00",PAD
+1.1.91.5.1.2.99.12,02. Tambahan Tunjangan Kasi Pelayanan April-Desember,9,Bulan,"25.650.000,00",PAD
+1.1.92.5.1.4.02.,01. Tunjangan Kinerja BPD 5 Orang,1,Ls,"30.000.000,00",PAD
+1.1.94.5.2.2.03.01,01. Honorarium Karyawan Bersih Kantor,12,Bln,"3.000.000,00",PAD
+1.1.94.5.2.2.03.02,02. Honorarium Petugas Makam 2 Orang,12,Bulan,"6.000.000,00",PAD
+1.1.94.5.2.2.03.03,03. Honorarium Panitia Sewa Lelang,1,Ls,"2.000.000,00",PAD
+1.1.94.5.2.2.03.04,04. Honorarium 3 Orang Modin Kematatian,3,Orang,"5.400.000,00",PAD
+1.1.96.5.2.7.01.,01. Jasa Purna Tugas Perangkat Desa Kaur Keuangan,1,Ls,"4.275.000,00",PAD
+1.2.02.5.2.6.04.,01. Pemeliharaan Gedung Kantor SPADL,1,Ls,"5.750.000,00",PAD
+1.2.02.5.2.6.08.,01. Pemeliharaan Jaringan Listrik SPADL,1,Ls,"1.500.000,00",PAD
+1.3.02.5.2.1.06.01,01. Profil Desa SPADL,1,Ls,"1.000.000,00",PAD
+1.4.02.5.2.1.06.02,01. Snack Rapat Desa PAD,1,Ls,"668.000,00",PAD
+1.4.02.5.2.1.06.03,01. Snack Rapat LPMD,1,Tahun,"4.000.000,00",PAD
+1.4.02.5.2.1.06.04,01. Rapat Desa PADL,1,Ls,"4.900.000,00",PAD
+1.4.02.5.2.1.06.05,Musdes Insidental 1 kali SADD - 01. Nasi Box,36,Kotak,"900.000,00",ADD
+1.4.02.5.2.1.06.06,Musdes Insidental 1 kali SADD - 01. Benner,1,bh,"100.000,00",ADD
+1.4.02.5.2.1.06.07,Musdes Indeks Desa (BHP) - 01. Nasi Kotak +Air Mineral,40,Kotak,"1.000.000,00",PBH
+1.4.02.5.2.1.08.01,Musdes Indeks Desa (BHP) - 01. Benner,1,bh,"100.000,00",PBH
+1.4.02.5.2.1.06.08,Rapat Penyusunan RKP (BHPR) - 01. Snack Box (5 Kali Pertemuan),55,Box,"660.000,00",PBH
+1.4.02.5.2.1.06.09,Rapat Internal Pemdes (BHPR) - 01. Snack Box (1 Bulan 2 Kali Rapat),12,Bullan,"2.191.200,00",PBH
+1.4.02.5.2.1.08.02,Rapat Internal Pemdes (BHPR) - 01. Benner,1,bh,"97.800,00",PBH
+1.4.02.5.2.1.06.10,Musrenbangdes RKP BHPR - 01. Nasi Kotak,85,Box,"2.125.000,00",PBH
+1.4.02.5.2.1.06.11,Musrenbangdes RKP BHPR - 02. Snack Box,85,Ls,"850.000,00",PBH
+1.4.02.5.2.1.06.12,Musrenbangdes RKP BHPR - 03. Air Mineral 600ml,1,Dus,"53.000,00",PBH
+1.4.02.5.2.1.08.03,Musrenbangdes RKP BHPR - 01. Benner,1,bh,"122.000,00",PBH
+1.4.02.5.2.1.06.13,Musdes Perencanaan Pembangunan SADD - 01. Nasi Kotak,76,Kotak,"1.520.000,00",ADD
+1.4.02.5.2.1.06.14,Musdes Perencanaan Pembangunan SADD - 02. Snack,76,Kotak,"760.000,00",ADD
+1.4.02.5.2.1.06.15,Musdes Perencanaan Pembangunan SADD - 03. Banner,1,bh,"120.000,00",ADD
+1.4.02.5.2.1.06.16,Musdes Perubahan APBDes ke-1 SADD - 01. Nasi Kotak,43,Kotak,"860.000,00",ADD
+1.4.02.5.2.1.06.17,Musdes Perubahan APBDes ke-1 SADD - 02. Snack,43,Kotak,"430.000,00",ADD
+1.4.02.5.2.1.08.04,Musdes Perubahan APBDes ke-1 SADD - 01. Benner,1,bh,"110.000,00",ADD
+1.4.02.5.2.1.06.18,Musdes Perubahan APBDes ke-2 SADD - 01. Nasi Kotak,76,Kotak,"1.520.000,00",ADD
+1.4.02.5.2.1.06.19,Musdes Perubahan APBDes ke-2 SADD - 02. Snack,76,kotak,"760.000,00",ADD
+1.4.02.5.2.1.08.05,Musdes Perubahan APBDes ke-2 SADD - 01. Benner,1,bh,"120.000,00",ADD
+1.4.02.5.2.1.06.20,Musdes APBDES Desember (BHPR) - 01. Nasi Kotak,76,Kotak,"1.520.000,00",PBH
+1.4.02.5.2.1.06.21,Musdes APBDES Desember (BHPR) - 02. Snack,76,Kotak,"760.000,00",PBH
+1.4.02.5.2.1.08.06,Musdes APBDES Desember (BHPR) - 01. Banner,1,Ls,"120.000,00",PBH
+1.4.03.5.2.2.01.,01. Honor Tim 11 dan Tim Verifikasi RKP Desa,1,Ls,"5.100.000,00",PBH
+1.4.04.5.2.1.01.,01. ATK Penyusunan LPJ PADL,1,Ls,"1.950.000,00",PAD
+1.4.91.5.2.2.06.01,01. Honor PKPKD Kepala Desa,11,Bulan,"3.300.000,00",ADD
+1.4.91.5.2.2.06.02,02. Honor PPKD Sekdes,11,Bulan,"2.750.000,00",ADD
+1.4.91.5.2.2.06.03,03. Honor PPKD Bendahara Desa,11,Bulan,"2.475.000,00",ADD
+1.4.91.5.2.2.06.04,04. Honor PPKD Bidang Pemerintahan,10,Bulan,"2.000.000,00",ADD
+1.4.91.5.2.2.06.05,05. Honor PPKD Bidang Pembangunan,11,Bulan,"2.200.000,00",ADD
+1.4.91.5.2.2.06.06,06. Honor PPKD Bidang Pembinaan,10,Bulan,"2.000.000,00",ADD
+1.4.91.5.2.2.06.07,07. Honor PPKD Bidang Pemberdayaan,11,Bulan,"2.200.000,00",ADD
+1.4.91.5.2.2.06.08,08. Honor PPKD Bidang Penanggulangan Bencana,11,Bulan,"2.200.000,00",ADD
+1.4.91.5.2.2.06.09,01. Kepala Desa PKPKD,1,Bulan,"300.000,00",PBH
+1.4.91.5.2.2.06.10,02. Sekretaris Desa PPKD,1,Bulan,"250.000,00",PBH
+1.4.91.5.2.2.06.11,03. Bendahara Desa PPKD,1,Bulan,"225.000,00",PBH
+1.4.91.5.2.2.06.12,04. PPKD Bidang Pembangunan,1,Bulan,"200.000,00",PBH
+1.4.91.5.2.2.06.13,05. PPKD Bidang Penanggulangan Bencana,1,Bulan,"200.000,00",PBH
+1.4.91.5.2.2.06.14,06. PPKD Bidang Pemberdayaan Masyarakat,1,Bulan,"200.000,00",PBH
+1.4.91.5.2.2.02.01,01. Honor Operator Siskeudes,12,Bulan,"2.400.000,00",PBH
+1.4.91.5.2.2.02.02,02. Honor Operator Sibankeudes,12,Bulan,"1.800.000,00",PBH
+1.4.91.5.2.2.02.03,03. Honor Operator SIPD,1,Orang,"200.000,00",PBH
+1.4.91.5.2.2.02.04,04. Honor Operator IDM,1,Kegiatan,"200.000,00",PBH
+1.4.91.5.2.2.02.05,05. Honor Operator Website Desa,1,Orang,"200.000,00",PBH
+1.4.91.5.2.2.02.06,06. Honor Operator SIKS-NG,1,Orang,"200.000,00",PBH
+1.4.91.5.2.2.02.07,07. Honor Operator Prodeskel Epdeskel,1,Kegiatan,"200.000,00",PBH
+1.4.91.5.2.2.02.08,08. Honor Operator SIAK,1,Kegiatan,"200.000,00",PBH
+1.4.91.5.2.2.02.09,09. Honor Operator Coretax,1,Orang,"200.000,00",PBH
+1.4.91.5.2.2.02.10,10. Honor Operator Jaga Desa,1,Kegiatan,"200.000,00",PBH
+1.4.91.5.2.2.02.11,11. Honor Operator Sipades,1,Orang,"200.000,00",PBH
+2.1.01.5.2.2.03.01,01. Jasa Honorarium Insentif Guru TK,11,Bulan,"5.500.000,00",DDS
+2.1.01.5.2.5.01.,01. Listrik PAUD,1,Ls,"105.000,00",PBH
+2.1.01.5.2.2.03.02,01. Jasa Honorarium Insentif Guru PAUD 3 Orang @250rb,11,Bulam,"8.250.000,00",DDS
+2.1.01.5.2.2.03.03,01. Jasa Honorarium Insentif Guru TPQ,11,Bulan,"16.500.000,00",DDS
+2.1.01.5.2.2.04.01,01. Insentif Guru TK Bulan Januari,2,Orang,"500.000,00",DDS
+2.1.01.5.2.2.04.02,01. Insentif Guru PAUD Bulan Januari,3,Orang,"750.000,00",DDS
+2.1.01.5.2.2.04.03,01. Insentif Guru TPQ Bulan Januari,6,Orang,"1.500.000,00",DDS
+2.2.02.5.2.1.06.01,01. PMT Posyandu Balita Blok A Bulan Januari-Maret SDD,92,Balita,"1.150.000,00",DDS
+2.2.02.5.2.1.06.02,03. PMT Posyandu Balita Blok B Bulan Januari-Maret SDD,63,Balita,"787.500,00",DDS
+2.2.02.5.2.1.06.03,04. PMT Posyandu Balita Blok C Bulan Januari-Maret SDD,95,Balita,"1.187.500,00",DDS
+2.2.02.5.2.1.06.04,01. PMT Tambahan PADL,1,Ls,"1.000.000,00",PAD
+2.2.02.5.2.1.06.05,01. PMT Balita Stunting Bulan Februari SDD,11,Anak,"1.100.000,00",DDS
+2.2.02.5.2.1.06.06,02. PMT Ibu Hamil Bulan Februari SDD,6,Bumil,"600.000,00",DDS
+2.2.02.5.2.1.06.07,01. PMT Posyandu Balita Blok A (33x9x12500),9,Bulan,"3.712.500,00",DDS
+2.2.02.5.2.1.06.08,02. PMT Posyandu Balita Blok B (25x9x12500),9,Bulan,"2.812.500,00",DDS
+2.2.02.5.2.1.06.09,03. PMT Posyandu Balita Blok C (33x9x12500),9,Bulan,"3.712.500,00",DDS
+2.2.02.5.2.1.06.10,01. PMT Balita Stunting dan Ibu Hamil DD,1,Ls,"8.500.000,00",DDS
+2.2.02.5.2.1.06.11,01. Snack ILP per Orang Rp.6000,12,Bulan,"6.480.000,00",DDS
+2.2.02.5.2.1.01.01,ATK Program Stunting - 01. Fotocopy /Penggandaan,4,Kali,"184.000,00",DDS
+2.2.02.5.2.1.01.02,ATK Program Stunting - 02. Bolpoin,12,Ls,"36.000,00",DDS
+2.2.02.5.2.1.01.03,ATK Program Stunting - 03. Tipe X,12,bh,"84.000,00",DDS
+2.2.02.5.2.1.01.04,ATK Program Stunting - 04. Jilid,12,bh,"36.000,00",DDS
+2.2.02.5.2.1.01.05,ATK Program Stunting - 05. Map File,12,Bh,"60.000,00",DDS
+2.2.02.5.2.2.03.01,01. Honorarium Kader PPKBD,1,Tahun,"400.000,00",DDS
+2.2.02.5.2.2.03.02,01. Honor KPM Stunting 3 Orang,4,Kali,"1.200.000,00",DDS
+2.2.02.5.2.1.07.,"01. Pembelian Kotak Makan Balita Posyandu A,B,C",90,Kotak,"6.300.000,00",DDS
+2.2.04.5.2.1.06.01,01. Konsumsi Makan Kegiatan Fogging,69,Kotak,"1.483.500,00",DDS
+2.2.04.5.2.1.06.02,02. Air Minum Fogging,3,Dus,"84.000,00",DDS
+2.2.04.5.2.1.07.01,"01. Solar Fogging A,B,C",90,Liter,"720.000,00",DDS
+2.2.04.5.2.1.07.02,"02. Bensin Fogging A,B,C",45,Ls,"675.000,00",DDS
+2.2.04.5.2.1.08.,01. Benner Fogging,3,Ls,"157.500,00",DDS
+2.2.04.5.2.2.01.,"01. Honor Petugas Pemanggul 6 Kali Kegiatan Blok A,B,C",3,Orang,"1.800.000,00",DDS
+2.2.05.5.2.1.07.,01. PMI,1,Tahun,"200.000,00",PAD
+2.2.05.5.2.1.06.,01. Konsumsi Kegiatan PIK Remaja,1,Tahun,"2.400.000,00",DDS
+2.3.02.5.2.6.05.,01. Pemeliharaan Jalan Lingkungan Pemukiman,1,Ls,"3.000.000,00",DDS
+2.3.03.5.2.6.05.,01. Pemeliharaan Jalan Usaha Tani SPADL,1,Ls,"3.350.000,00",PAD
+2.3.05.5.2.6.08.01,"Pemeliharaan Listrik Jalan Desa (PAD) - 01. Pembelian Lampu, Pitingan, Kabel",1,Tahun,"2.400.000,00",PAD
+2.3.05.5.2.6.07.,01. Pemeliharaan Drainase Blok A PADL,1,Ls,"12.000.000,00",PAD
+2.3.05.5.2.6.08.02,Pemeliharaan Lampu Jalan Pemukiman SDD - 01. Lampu Philips 11 W LED,30,Paket,"4.200.000,00",DDS
+2.3.05.5.2.6.08.03,Pemeliharaan Lampu Jalan Pemukiman SDD - 02. Lampu Philips 12 W LED,10,Paket,"1.680.000,00",DDS
+2.3.05.5.2.6.08.04,Pemeliharaan Lampu Jalan Pemukiman SDD - 03. Kabel,50,Meter,"350.000,00",DDS
+2.3.05.5.2.6.08.05,Pemeliharaan Lampu Jalan Pemukiman SDD - 04. Pitingan,17,Bh,"119.000,00",DDS
+2.3.05.5.2.6.08.06,Pemeliharaan Lampu Jalan Pemukiman SDD - 05. Lakban Hitam,3,bh,"15.900,00",DDS
+2.3.90.5.2.6.07.01,01. PKT Saluran Pemukiman,3,Paket,"4.500.000,00",DDS
+2.3.90.5.2.6.07.02,01. PKT Saluran Sawah,1,Paket,"2.000.000,00",DDS
+2.4.015.2.7.03.,01. Dukungan Pelaksanaan Program RTLH (2 rumah),2,KPM,"20.000.000,00",DDS
+2.6.02.5.2.1.07.,01. Pemberitaan Media,1,Tahun,"3.000.000,00",PBH
+2.6.03.5.2.1.08.01,01. Transaparansi APBDes DD,1,Tahun,"1.000.000,00",DDS
+2.6.03.5.2.1.08.02,01. Transparansi APBdes SDD,1,Tahun,"1.000.000,00",DDS
+2.6.99.5.2.5.05.,01. Langganan Internet Warga Desa,12,Bulan,"3.600.000,00",DDS
+2.7.02.5.3.2.99.01,01. Pembelian Satu Paket Lampu PJU dan Tiang PJU (SD,1,Ls,"9.500.000,00",DDS
+2.7.02.5.3.2.99.02,01. Tenaga Kerja Pemasangangan Lampu PJU (DD),4,Orang,"400.000,00",DDS
+2.7.02.5.3.2.99.03,02. Pembelian Lampu Tenaga Surya,0,Ls,0,DDS
+3.1.02.5.2.1.06.01,Pelatihan Linmas - 01. Nasi Kotak,30,Kotak,"750.000,00",PBH
+3.1.02.5.2.1.06.02,Pelatihan Linmas - 02. Air Mineral 600ml,1,dus,"57.000,00",PBH
+3.1.02.5.2.1.06.03,Pelatihan Linmas - 03. Air Mineral 220ml,1,dus,"23.000,00",PBH
+3.1.02.5.2.1.08.,Pelatihan Linmas - 01. Banner,1,Bh,"110.000,00",PBH
+3.1.02.5.2.2.04.,Pelatihan Linmas - 01. Honor Narasumber dari Koramil dan Polsek,2,Orang,"2.000.000,00",PBH
+3.1.05.5.2.1.06.,Penyediaan Pos Kesiapgaan SPADL - 01. Nasi dan Snack,1,Ls,"3.700.000,00",PAD
+3.1.07.5.2.1.06.01,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 01. Nasi Kotak,100,Kotak,"2.500.000,00",DDS
+3.1.07.5.2.1.06.02,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 02. Snack,100,Kotak,"1.000.000,00",DDS
+3.1.07.5.2.1.06.03,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 03. Air Mineral 600 ml,4,Dus,"212.000,00",DDS
+3.1.07.5.2.1.06.04,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 04. Air Mineral 220 ml,2,Dus,"88.000,00",DDS
+3.1.07.5.2.1.08.,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 01. Benner,1,bh,"150.000,00",DDS
+3.1.07.5.2.2.04.,Pelatihan/ Sosialisasi kpd Masyarakat di Bidang Hukum - 01. Honor Narasumber Pelatihan Sadarkum,2,Orang,"1.000.000,00",DDS
+3.2.03.5.2.1.06.01,Suronan BHPR - 01. Nasi Kotak,500,Kotak,"10.000.000,00",PBH
+3.2.03.5.2.1.90.,01. Hadiah Agustusan Kec,1,Ls,"1.500.000,00",PAD
+3.2.03.5.2.4.02.,"Takbir Keliling dan Tahlil di Makam BHPR - 01. Jasa Sewa Sound System, Jenset, Mic",1,Paket,"1.000.000,00",PBH
+3.2.03.5.2.1.06.02,Malam Tirakatan Hari Jadi Kabupaten BHP - 01. Tumpeng komplit,1,bh,"253.000,00",PBH
+3.2.03.5.2.1.06.03,Malam Tirakatan Hari Jadi Kabupaten BHP - 02. Nasi Kotak,27,Kotak,"594.000,00",PBH
+3.2.03.5.2.1.06.04,Malam Tirakatan Hari Jadi Kabupaten BHP - 03. Air Mineral 660ml,1,Dus,"53.000,00",PBH
+3.2.03.5.2.1.08.01,Malam Tirakatan Hari Jadi Kabupaten BHP - 01. Benner,1,bh,"100.000,00",PBH
+3.2.03.5.2.1.06.05,Malam Tirakatan 17 Agustus BHP - 01. Tumpeng komplit,1,Paket,"253.000,00",PBH
+3.2.03.5.2.1.06.06,Malam Tirakatan 17 Agustus BHP - 02. Nasi Kotak,27,Kotak,"594.000,00",PBH
+3.2.03.5.2.1.06.07,Malam Tirakatan 17 Agustus BHP - 04. Air Mineral 660ml,1,dus,"53.000,00",PBH
+3.2.03.5.2.1.08.02,Malam Tirakatan 17 Agustus BHP - 01. Benner,1,bh,"100.000,00",PBH
+3.2.03.5.2.1.08.03,"Umbul-Umbul, Benner Hari Jadi Ngawi BHP - 01. Benner Hari Jadi Ngawi Uk. 2 M x 2,5 M",1,Ls,"110.000,00",PBH
+3.2.03.5.2.1.08.04,"Umbul-Umbul, Benner Hari Jadi Ngawi BHP - 02. Umbul-Umbul Hari Jadi Ngawi ke 668th",4,Ls,"300.000,00",PBH
+3.2.03.5.2.1.08.05,"Umbul-Umbul, Benner Hari Jadi Ngawi BHP - 03. Benner Hari Jadi Ngawi Uk 2mx1m",1,bh,"90.000,00",PBH
+3.2.03.5.2.1.08.06,"Umbul-Umbul dan Bendera Agustusan BHP - 01. Umbul-Umbul Renda Uk. 9,6 M",2,bh,"320.000,00",PBH
+3.2.03.5.2.1.08.07,Umbul-Umbul dan Bendera Agustusan BHP - 02. Umbul-umbul layur berdiri,4,bh,"130.000,00",PBH
+3.2.03.5.2.1.08.08,Umbul-Umbul dan Bendera Agustusan BHP - 03. Bendera Merah Putih Bsr,2,bh,"50.000,00",PBH
+3.2.03.5.2.1.06.08,PHBI DLL - 01. Snack,150,bh,"1.500.000,00",DLL
+3.2.04.5.2.6.04.01,Pemeliharaan Masjid dan Mushola - 01. Cat Tembok 5 Kg,39,bh,"5.850.000,00",PAD
+3.2.04.5.2.6.04.02,Pemeliharaan Masjid dan Mushola - 02. Kuas,26,bh,"650.000,00",PAD
+3.2.04.5.2.6.04.03,Pemeliharaan Masjid dan Mushola - 03. Cat tembok 5Kg (Masjid),6,bh,"900.000,00",PAD
+3.2.04.5.2.6.04.04,Pemeliharaan Masjid dan Mushola - 04. Kuas (masjid),4,bh,"100.000,00",PAD
+3.2.04.5.2.6.04.05,Pemeliharaan Makam (Beli Kabel ) - 01. Kabel Engkel,4,Roll,"500.000,00",PAD
+3.2.04.5.2.6.04.06,Pemeliharaan Makam (Beli Kabel ) - 02. Lampu 24 watt,10,bh,"340.000,00",PAD
+3.2.04.5.2.6.04.07,Pemeliharaan Makam (Beli Kabel ) - 03. Pitingan Lampu gantung,10,bh,"150.000,00",PAD
+3.2.04.5.2.6.04.08,Pemeliharaan Makam (Beli Kabel ) - 04. Solasi,1,bh,"10.000,00",PAD
+3.2.04.5.2.6.04.09,Pemeliharaan Kebersihan Makam BHP - 01. Pembersihan Makam (Obat Rumput),7,bh,"560.000,00",PBH
+3.3.06.5.2.7.01.01,Pembelian Peralatan Olahraga Karangtaruna BHP - 01. Bola Voly,2,bh,"570.000,00",PBH
+3.3.06.5.2.7.01.02,Pembelian Peralatan Olahraga Karangtaruna BHP - 02. Nett Voly,1,Bh,"430.000,00",PBH
+3.4.03.5.2.1.01.01,ATK PKK BHPR - 01. Buku PKK,6,bh,"150.000,00",PBH
+3.4.03.5.2.1.01.02,ATK PKK BHPR - 02. Bolpoint,10,pcs,"20.000,00",PBH
+3.4.03.5.2.1.01.03,ATK PKK BHPR - 03. Stopmap,30,bh,"60.000,00",PBH
+3.4.03.5.2.1.01.04,ATK PKK BHPR - 04. Tipe X,2,bh,"7.000,00",PBH
+3.4.03.5.2.1.05.,ATK PKK BHPR - 01. Fotocopy,180,Lembar,"63.000,00",PBH
+3.4.03.5.2.1.06.01,01. Rapat Pleno Pkk Desa,1,Tahun,"1.000.000,00",PBH
+3.4.03.5.2.1.06.02,02. Konsumsi Rapat Pleno Kecamatan,50,Orang,"500.000,00",PBH
+3.4.03.5.2.3.01.,01. Operasional LKD,1,Ls,"3.000.000,00",PAD
+4.2.01.5.2.6.99.01,01. Upah PKT Gropyok Tikus 1 Musim SDD,1,Ls,"4.000.000,00",DDS
+4.2.01.5.2.6.99.02,01. Gropyok Tikus 2 Musim DD,2,Musim,"6.000.000,00",DDS
+4.2.03.5.2.1.07.01,Gema Parut - 01. Bibit - Biji,7,kg,"805.000,00",DDS
+4.2.03.5.2.1.07.02,Gema Parut - 02. Tanah Hitam,10,sak,"300.000,00",DDS
+4.2.03.5.2.1.07.03,Gema Parut - 03. Pupuk Organik,2,sak,"100.000,00",DDS
+4.2.03.5.2.1.07.04,Gema Parut - 04. Cocopeat,2,Karung,"140.000,00",DDS
+4.2.03.5.2.1.07.05,Gema Parut - 05. Sekam,4,sak,"80.000,00",DDS
+4.2.03.5.3.4.02.,Gema Parut - 01. Upah Pekerja,4,HOK,"400.000,00",DDS
+4.2.03.5.3.4.03.01,Gema Parut - 01. Hollow galvanis 40 x 40 (rangka utama),32,batang,"1.760.000,00",DDS
+4.2.03.5.3.4.03.02,Gema Parut - 02. Hollow galvanis 20x40 (reng/pengikat),10,Batang,"450.000,00",DDS
+4.2.03.5.3.4.03.03,Gema Parut - 03. Baut SDS / sekrup roofing,2,box,"240.000,00",DDS
+4.2.03.5.3.4.03.04,Gema Parut - 04. Plastik UV greenhouse,14,Meter,"420.000,00",DDS
+4.2.03.5.3.4.03.05,Gema Parut - 05. Paranet 65%,40,M2,"480.000,00",DDS
+4.2.03.5.3.4.03.06,Gema Parut - 06. Kawat bendrat / clamp pengikat,3,kg,"75.000,00",DDS
+4.2.03.5.3.4.03.07,Gema Parut - 07. Selang 3/4 Dim,1,roll,"350.000,00",DDS
+4.2.03.5.3.4.03.08,Gema Parut - 08. Papan buat meja,20,meter,"400.000,00",DDS
+4.2.05.5.2.1.06.,Pelatihan Teknologi Tepat Guna untuk Pertanian - 01. Nasi Kotak dan Snack,1,Ls,"1.110.000,00",DDS
+4.2.05.5.2.1.07.,Pelatihan Teknologi Tepat Guna untuk Pertanian - 01. Belanja Bahan Pelatihan,1,Ls,"2.990.000,00",DDS
+4.2.05.5.2.2.04.,Pelatihan Teknologi Tepat Guna untuk Pertanian - 01. Honor Narasumber Pelatihan,4,Orang,"4.000.000,00",DDS
+4.2.05.5.2.2.05.,Pelatihan Teknologi Tepat Guna untuk Pertanian - 01. Jasa Kebersihan,2,Orang,"400.000,00",DDS
+4.2.05.5.2.2.08.,Pelatihan Teknologi Tepat Guna untuk Pertanian - 01. Honor peserta Bimbingan Pelatihan,30,Orang,"1.500.000,00",DDS
+4.5.02.5.3.4.01.01,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 01. Honor Penanggung Jawab,1,Orang,"2.300.000,00",DDS
+4.5.02.5.3.4.01.02,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 03. Honor Sekretaris,1,Orang,"400.000,00",DDS
+4.5.02.5.3.4.02.,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 01. Pekerja,39,oh,"3.705.000,00",DDS
+4.5.02.5.3.4.03.01,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 01. Tanah Urug Pilihan,"540,39",M3,"60.577.500,00",DDS
+4.5.02.5.3.4.03.02,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 02. Papan Nama Kegiatan,2,bh,"500.000,00",DDS
+4.5.02.5.3.4.03.03,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 03. Prasasti,2,Ls,"1.000.000,00",DDS
+4.5.02.5.2.2.01.01,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 01. Ketua TPK,1,Orang,"500.000,00",PBH
+4.5.02.5.2.2.01.02,Dukungan KDMP Pengurugan Lahan Siap Pakai DD - 02. Anggota TPK,2,Orang,"700.000,00",PBH
+5.1.00.5.4.1.01.,01. Penanggulangan Bencana,1,Ls,"3.000.000,00",DDS
+5.3.00.5.4.1.01.01,01. BLT DD Bulan Januari,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.02,02. BLT DD Februari,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.03,03. BLT DD MAret,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.04,04. BLT DD April,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.05,05. BLT DD Mei,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.06,06. BLT DD Juni,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.07,07. BLT DD Juli,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.08,08. BLT DD Agustus,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.09,09. BLT DD September,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.10,10. BLT DD Oktober,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.11,11. BLT DD November,15,Orang,"3.000.000,00",DDS
+5.3.00.5.4.1.01.12,12. BLT DD Bulan Desember,15,Orang,"3.000.000,00",DDS
+6.4.1.2.01,01. Pengelolaan Tanah Kas Desa,1,Ls,"569.250.000,00",PAD
+6.4.1.2.03,01. Pasar Desa,1,Ls,"8.500.000,00",PAD
+6.4.1.3.99,01. Hasil Pungutan Desa,1,Ls,"2.400.000,00",PAD
+6.4.2.1.01,01. Dana Desa,1,Ls,"240.948.000,00",DDS
+6.4.2.2.01,01. Bagi Hasil Pajak dan Retribusi Daerah Kabupaten,1,Ls,"72.531.000,00",PBH
+6.4.2.3.01,01. Alokasi Dana Desa,1,Ls,"464.727.000,00",ADD
+6.4.3.5.01,Pengembalian Belanja Tahun-tahun Sebelumnya,0,Ls,0,DLL
+6.4.3.6.01,01. Bunga Bank,1,Ls,"100.000,00",DLL
