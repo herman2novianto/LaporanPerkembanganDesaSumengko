@@ -13,7 +13,7 @@ USERS = {
     "lugaskhalidmaulana@gmail.com": "1",
     "sarihpuspita@gmail.com": "2",
     "assegafsetiawan2018@gmail.com": "3",
-    "hermandwinov@gmail.com": "4",
+    "ramlinuraziza@gmail.com": "4",
     "galuhmawati@gmail.com": "5"
 }
 
@@ -30,11 +30,11 @@ MASTER_FILE = "Master_DPA.csv" # File referensi Anda
 # Mapping PPKD berdasarkan digit pertama Kode Rekening
 # Ini berfungsi menyisipkan Nama_PPKD yang tidak ada di CSV
 PEMETAAN_PPKD = {
-    "1": "Lugas Khalid",
-    "2": "Sari Puspita",
-    "3": "Assegaf Setiawan",
-    "4": "Herman Dwi Nov",
-    "5": "Galuh Mawati"
+    "1": "Lugas Khalid Maulana",
+    "2": "Puspita Sari Handayani, SE",
+    "3": "Agus Setiawan, Spd",
+    "4": "Ramli Nur Aziza",
+    "5": "Galuh Rismawati"
 }
 
 # ==========================================
@@ -306,7 +306,7 @@ if menu_utama == "⚙️ Kelola Master DPA":
 
 elif menu_utama == "📝 Transaksi & Laporan":
     
-    tab1, tab2, tab3 , tab4 = st.tabs(["📝 Input Realisasi SPP", "🗂️ Data SPP (Cetak Satuan)", "🖨️ Print Lap Perkembangan", "🖨️ Print Lap Akhir"])
+    tab1, tab2, tab3 , tab4 = st.tabs(["📝 Input Realisasi SPP", "🗂️ Data SPP Sudah Input", "🖨️ Print Lap Perkembangan", "🖨️ Print Lap Akhir"])
 
     # --- TAB 1: INPUT DATA ---
     with tab1:
