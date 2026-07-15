@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from fpdf import FPDF
 from datetime import date
-import uuid
+import uuidd
+from streamlit_gsheets import GSheetsConnection
 
 # ==========================================
 # 1. KONFIGURASI KEAMANAN (SECURITY FILTER)
@@ -50,11 +51,42 @@ def bersihkan_rupiah(teks):
 # ==========================================
 # 2. DATABASE (Terhubung ke CSV Asli)
 # ==========================================
+conn = st.connection("gsheets", type=GSheetsConnection)
+
 def init_db():
     # 1. BACA FILE MASTER DPA CSV
     if 'master_dpa' not in st.session_state:
         try:
-            df_dpa = pd.read_csv(MASTER_FILE)
+def init_db():
+    # 1. BACA FILE MASTER DPA DARI GOOGLE SHEETS
+    if 'master_dpa' not in st.session_state:
+        # Mengambil sheet Master_DPA
+        df_dpa = conn.read(worksheet="Master_DPA", ttl=0)
+        
+        # Bersihkan data jika ada kolom kosong dari Excel
+        df_dpa = df_dpa.dropna(subset=['Kode_Rekening'])
+        df_dpa['Kode_Rekening'] = df_dpa['Kode_Rekening'].astype(str)
+        
+        def get_ppkd_name(kode):
+            digit_awal = str(kode)[0]
+            return PEMETAAN_PPKD.get(digit_awal, "Tidak Diketahui")
+            
+        df_dpa['Nama_PPKD'] = df_dpa['Kode_Rekening'].apply(get_ppkd_name)
+        st.session_state.master_dpa = df_dpa
+            
+    # 2. BACA FILE DATA REALISASI (SPP) DARI GOOGLE SHEETS
+    if 'realisasi_spp' not in st.session_state:
+        df_spp = conn.read(worksheet="Data_SPP", ttl=0)
+        
+        # Jika sheet masih kosong melompong, buatkan strukturnya
+        if df_spp.empty:
+            df_spp = pd.DataFrame(columns=[
+                "ID", "Tanggal_SPP", "No_SPP", "Kode_Rekening", "Nominal", "Vol_Realisasi", "User_Email"
+            ])
+            
+        st.session_state.realisasi_spp = df_spp
+
+init_db()
             df_dpa.columns = df_dpa.columns.str.strip()
             df_dpa['Kode_Rekening'] = df_dpa['Kode_Rekening'].astype(str)
             
@@ -79,7 +111,9 @@ def init_db():
         st.session_state.realisasi_spp = pd.DataFrame(columns=[
             "ID", "Tanggal_SPP", "No_SPP", "Kode_Rekening", "Nominal", "Vol_Realisasi", "User_Email"
         ])
-        st.session_state.realisasi_spp.to_csv(DB_FILE, index=False)
+        # Jika menyimpan transaksi SPP (Ganti DB_FILE):
+conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
+st.cache_data.clear() # Bersihkan cache agar langsung update
 
 init_db()
 # ==========================================
@@ -298,7 +332,9 @@ if menu_utama == "⚙️ Kelola Master DPA":
             # Update session_state dengan data yang baru diedit
             st.session_state.master_dpa = edited_dpa
             # Simpan secara permanen ke file CSV
-            st.session_state.master_dpa.to_csv(MASTER_FILE, index=False)
+            # Jika menyimpan transaksi SPP (Ganti DB_FILE):
+conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
+st.cache_data.clear() # Bersihkan cache agar langsung update
             st.success("✅ Data Master DPA berhasil diperbarui dan disimpan secara permanen!")
             st.rerun() # Muat ulang agar kamus dictionary (uraian_dict) ikut ter-update
         except PermissionError:
