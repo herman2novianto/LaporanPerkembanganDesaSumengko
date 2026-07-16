@@ -31,9 +31,23 @@ PEMETAAN_PPKD = {
 # FUNGSI PEMBERSIH ANGKA
 # ==========================================
 def bersihkan_rupiah(teks):
-    """Mengubah format '31.452.000,00' menjadi angka float 31452000.0"""
+    """Mengubah format angka dengan aman agar tidak kelebihan nol"""
     try:
-        return float(str(teks).replace(".", "").replace(",", "."))
+        # 1. Jika data sudah otomatis terbaca sebagai angka murni
+        if isinstance(teks, (int, float)):
+            return float(teks)
+        
+        # 2. Jika data terbaca sebagai teks
+        teks_str = str(teks).strip()
+        
+        # Jika format Indonesia (mengandung koma desimal, misal: 3.712.500,00)
+        if "," in teks_str:
+            teks_str = teks_str.replace(".", "").replace(",", ".")
+        # Jika format pemisah ribuan titik murni (misal: 3.712.500 atau 3.500)
+        elif teks_str.count(".") > 1 or (teks_str.count(".") == 1 and len(teks_str.split(".")[1]) == 3):
+            teks_str = teks_str.replace(".", "")
+            
+        return float(teks_str)
     except:
         return 0.0
 
