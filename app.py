@@ -48,9 +48,18 @@ def init_db():
     if 'master_dpa' not in st.session_state:
         df_dpa = conn.read(worksheet="Master_DPA", ttl=0)
         
-        # --- TAMBAHAN KODE PELINDUNG: Bersihkan spasi gaib di nama kolom ---
-        df_dpa.columns = df_dpa.columns.str.strip()
+        # Bersihkan spasi gaib di nama kolom
+        df_dpa.columns = df_dpa.columns.astype(str).str.strip()
         
+        # --- KODE PELACAK ERROR ---
+        if 'Kode_Rekening' not in df_dpa.columns:
+            st.error("🚨 **ERROR DETEKSI KOLOM DI GOOGLE SHEETS** 🚨")
+            st.warning(f"Sistem mencari kolom bernama **'Kode_Rekening'**, tetapi yang ditemukan di Google Sheets Anda adalah:")
+            st.info(f"{list(df_dpa.columns)}")
+            st.error("👉 **Solusi:** Silakan buka Google Sheets Anda (Tab Master_DPA), lalu perbaiki baris paling atas agar namanya sama persis menjadi **Kode_Rekening**")
+            st.stop() # Hentikan aplikasi sampai Excel diperbaiki
+        # --------------------------
+
         # Bersihkan data jika ada kolom kosong dari Excel
         df_dpa = df_dpa.dropna(subset=['Kode_Rekening'])
         df_dpa['Kode_Rekening'] = df_dpa['Kode_Rekening'].astype(str)
@@ -66,8 +75,7 @@ def init_db():
     if 'realisasi_spp' not in st.session_state:
         df_spp = conn.read(worksheet="Data_SPP", ttl=0)
         
-        # --- TAMBAHAN KODE PELINDUNG: Bersihkan spasi gaib di nama kolom ---
-        df_spp.columns = df_spp.columns.str.strip()
+        df_spp.columns = df_spp.columns.astype(str).str.strip()
         
         # Jika sheet masih kosong melompong, buatkan strukturnya
         if df_spp.empty:
