@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from fpdf import FPDF
 from datetime import date
-import uuidd
+import uuid
 from streamlit_gsheets import GSheetsConnection
 
 # ==========================================
@@ -18,18 +18,7 @@ USERS = {
     "galuhmawati@gmail.com": "5"
 }
 
-import os # Tambahkan ini di bagian paling atas (bersama import pandas dll)
-
-import os
-
-# ==========================================
-# 2. DATABASE (Terhubung ke CSV Asli)
-# ==========================================
-DB_FILE = "data_spp.csv" # Untuk menyimpan input realisasi
-MASTER_FILE = "Master_DPA.csv" # File referensi Anda
-
 # Mapping PPKD berdasarkan digit pertama Kode Rekening
-# Ini berfungsi menyisipkan Nama_PPKD yang tidak ada di CSV
 PEMETAAN_PPKD = {
     "1": "Lugas Khalid Maulana",
     "2": "Puspita Sari Handayani, SE",
@@ -39,7 +28,7 @@ PEMETAAN_PPKD = {
 }
 
 # ==========================================
-# FUNGSI PEMBERSIH ANGKA (Letakkan di luar init_db)
+# FUNGSI PEMBERSIH ANGKA
 # ==========================================
 def bersihkan_rupiah(teks):
     """Mengubah format '31.452.000,00' menjadi angka float 31452000.0"""
@@ -49,18 +38,14 @@ def bersihkan_rupiah(teks):
         return 0.0
 
 # ==========================================
-# 2. DATABASE (Terhubung ke CSV Asli)
+# 2. DATABASE (Terhubung ke Google Sheets)
 # ==========================================
+# Membuat koneksi ke Google Sheets
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 def init_db():
-    # 1. BACA FILE MASTER DPA CSV
-    if 'master_dpa' not in st.session_state:
-        try:
-def init_db():
     # 1. BACA FILE MASTER DPA DARI GOOGLE SHEETS
     if 'master_dpa' not in st.session_state:
-        # Mengambil sheet Master_DPA
         df_dpa = conn.read(worksheet="Master_DPA", ttl=0)
         
         # Bersihkan data jika ada kolom kosong dari Excel
@@ -87,37 +72,9 @@ def init_db():
         st.session_state.realisasi_spp = df_spp
 
 init_db()
-            df_dpa.columns = df_dpa.columns.str.strip()
-            df_dpa['Kode_Rekening'] = df_dpa['Kode_Rekening'].astype(str)
-            
-            def get_ppkd_name(kode):
-                digit_awal = str(kode)[0]
-                return PEMETAAN_PPKD.get(digit_awal, "Tidak Diketahui")
-                
-            df_dpa['Nama_PPKD'] = df_dpa['Kode_Rekening'].apply(get_ppkd_name)
-            st.session_state.master_dpa = df_dpa
-            
-        except FileNotFoundError:
-            st.error(f"File '{MASTER_FILE}' tidak ditemukan.")
-            st.stop()
-            
-    # 2. BACA FILE DATA REALISASI (SPP)
-    if os.path.exists(DB_FILE):
-        st.session_state.realisasi_spp = pd.read_csv(DB_FILE)
-        # Tambahkan kolom ini jika CSV lama belum memilikinya
-        if 'Vol_Realisasi' not in st.session_state.realisasi_spp.columns:
-            st.session_state.realisasi_spp['Vol_Realisasi'] = 0.0
-    else:
-        st.session_state.realisasi_spp = pd.DataFrame(columns=[
-            "ID", "Tanggal_SPP", "No_SPP", "Kode_Rekening", "Nominal", "Vol_Realisasi", "User_Email"
-        ])
-        # Jika menyimpan transaksi SPP (Ganti DB_FILE):
-conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
-st.cache_data.clear() # Bersihkan cache agar langsung update
 
-init_db()
 # ==========================================
-# 3. FUNGSI GENERATE PDF (DIPERBARUI)
+# 3. FUNGSI GENERATE PDF
 # ==========================================
 class PDF(FPDF):
     def __init__(self, orientation='P', unit='mm', format='A4', judul=""):
@@ -198,20 +155,16 @@ def generate_laporan_pdf(df_laporan, bulan, tahun, desa, kecamatan, kabupaten, p
     total_dd = 0; total_add = 0; total_lain = 0
     
     for idx, row in df_laporan.iterrows():
-        # Parsing data master dan SPP
         uraian = str(row['Uraian_Kegiatan'])
         if len(uraian) > 35: uraian = uraian[:55] + "..."
             
         angg_rencana = bersihkan_rupiah(row['Anggaran_Rencana'])
-        angg_real = float(row['Nominal']) # Didapat dari penjumlahan SPP
-        
-        # Mengambil Volume Realisasi
+        angg_real = float(row['Nominal'])
         vol_real = float(row['Vol_Realisasi']) if pd.notna(row['Vol_Realisasi']) else 0
         
         capaian = (angg_real / angg_rencana * 100) if angg_rencana > 0 else 0
         sumber = str(row['Sumber_Dana']).strip().upper()
         
-        # PERBAIKAN LOGIKA: Sekarang mengambil angka dari Realisasi (angg_real)
         dd = angg_real if sumber == "DDS" else 0
         add = angg_real if sumber == "ADD" else 0
         lain = angg_real if sumber not in ["DDS", "ADD", ""] else 0
@@ -225,17 +178,17 @@ def generate_laporan_pdf(df_laporan, bulan, tahun, desa, kecamatan, kabupaten, p
         pdf.cell(widths[3], 6, str(row['Satuan_Rencana']), border=1, align="C")
         pdf.cell(widths[4], 6, f"{angg_rencana:,.0f}", border=1, align="R")
         
-        # Realisasi (Volume sekarang akan muncul)
+        # Realisasi
         pdf.cell(widths[5], 6, f"{vol_real:g}" if vol_real > 0 else "-", border=1, align="C") 
         pdf.cell(widths[6], 6, str(row['Satuan_Rencana']), border=1, align="C")
         pdf.cell(widths[7], 6, f"{angg_real:,.0f}", border=1, align="R")
         pdf.cell(widths[8], 6, f"{capaian:.1f}%", border=1, align="C")
         
-        # Sumber Dana (Memunculkan nilai Realisasi)
+        # Sumber Dana
         pdf.cell(widths[9], 6, f"{dd:,.0f}" if dd>0 else "-", border=1, align="R")
         pdf.cell(widths[10], 6, f"{add:,.0f}" if add>0 else "-", border=1, align="R")
         pdf.cell(widths[11], 6, f"{lain:,.0f}" if lain>0 else "-", border=1, align="R")
-        pdf.cell(widths[12], 6, str(row['Sumber_Dana']), border=1, align="C") # Bentuk Lain
+        pdf.cell(widths[12], 6, str(row['Sumber_Dana']), border=1, align="C")
         pdf.ln()
         
         # Akumulasi
@@ -263,17 +216,23 @@ def generate_laporan_pdf(df_laporan, bulan, tahun, desa, kecamatan, kabupaten, p
     pdf.set_x(180)
     pdf.cell(60, 5, f"( {nama_ppkd} )", align="C", ln=1)
     
-    filename = f"Laporan_Perkembangan_{tgl_mulai.strftime('%d%m%Y')}_{tgl_akhir.strftime('%d%m%Y')}.pdf"
+    # Karena parameter fungsi meminta bulan dan tahun, pastikan ini sesuai:
+    if isinstance(bulan, date):
+        filename = f"Laporan_Perkembangan_{bulan.strftime('%d%m%Y')}_{tahun.strftime('%d%m%Y')}.pdf"
+    else:
+        filename = f"Laporan_Perkembangan_{bulan}_{tahun}.pdf"
+        
     pdf.output(filename)
     with open(filename, "rb") as f:
         return f.read(), filename
+
 # ==========================================
 # 4. ANTARMUKA PENGGUNA (UI)
 # ==========================================
 st.set_page_config(page_title="Keuangan Desa", layout="wide")
 st.title("Sistem Tata Kelola Keuangan Desa")
 
-# SIMULASI LOGIN (Pengganti USEREMAIL() di AppSheet)
+# SIMULASI LOGIN
 user_email = st.sidebar.selectbox("Simulasi Login (Security Filter):", list(USERS.keys()))
 hak_akses = USERS[user_email]
 
@@ -282,34 +241,29 @@ if hak_akses == "ALL":
 else:
     st.sidebar.success(f"Akses: Bidang {hak_akses}")
 
-# Relasi Data (Ref / Lookup) Master DPA
+# Relasi Data
 df_dpa = st.session_state.master_dpa
 if hak_akses != "ALL":
-    # Sama persis dengan logika: LEFT([Kode_Rekening], 1) = Kunci Akses
     df_dpa = df_dpa[df_dpa['Kode_Rekening'].str.startswith(hak_akses)]
 
-# --- TAMBAHKAN MENU NAVIGASI SIDEBAR ---
+# NAVIGASI SIDEBAR
 st.sidebar.markdown("---")
 if hak_akses == "ALL":
-    # Hanya Admin yang bisa melihat menu Kelola Master DPA
     menu_utama = st.sidebar.radio("📂 MENU UTAMA", ["📝 Transaksi & Laporan", "⚙️ Kelola Master DPA"])
 else:
     menu_utama = "📝 Transaksi & Laporan"
 st.sidebar.markdown("---")
 
-# Membuat kamus/peta untuk menggabungkan Kode dan Uraian
+# Kamus Uraian
 uraian_dict = dict(zip(df_dpa['Kode_Rekening'], df_dpa['Uraian_Kegiatan']))
 sdana_dict = dict(zip(df_dpa['Kode_Rekening'], df_dpa['Sumber_Dana']))
 
 def format_dropdown(kode):
-    # Logika baru untuk merespon pilihan "ALL"
     if kode == "ALL":
         return "☑️ ALL - Cetak Semua Kegiatan"
-    # Menggabungkan Kode_Rekening dengan Uraian_Kegiatan
     uraian = uraian_dict.get(kode, "")
     sdana = sdana_dict.get(kode, "")
     return f"{kode} - {uraian} - {sdana}"
-
 
 # ==========================================
 # PERCABANGAN MENU
@@ -318,27 +272,20 @@ if menu_utama == "⚙️ Kelola Master DPA":
     st.subheader("⚙️ Kelola Data Master DPA")
     st.info("💡 **Petunjuk:** Klik 2x pada sel tabel untuk mengedit teks/angka. Gunakan tombol '➕ Add Row' di bagian bawah tabel untuk menambah kegiatan baru. Untuk menghapus, centang kotak di ujung kiri baris, lalu tekan ikon '🗑️' (Delete).")
     
-    # Menampilkan Data Editor Interaktif
     edited_dpa = st.data_editor(
         st.session_state.master_dpa, 
-        num_rows="dynamic", # Memungkinkan penambahan & penghapusan baris
+        num_rows="dynamic",
         use_container_width=True,
         key="dpa_editor"
     )
     
-    # Tombol Simpan Perubahan
-    if st.button("💾 Simpan Perubahan ke CSV", type="primary"):
-        try:
-            # Update session_state dengan data yang baru diedit
-            st.session_state.master_dpa = edited_dpa
-            # Simpan secara permanen ke file CSV
-            # Jika menyimpan transaksi SPP (Ganti DB_FILE):
-conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
-st.cache_data.clear() # Bersihkan cache agar langsung update
-            st.success("✅ Data Master DPA berhasil diperbarui dan disimpan secara permanen!")
-            st.rerun() # Muat ulang agar kamus dictionary (uraian_dict) ikut ter-update
-        except PermissionError:
-            st.error(f"⚠️ Gagal Menyimpan: File '{MASTER_FILE}' sedang terbuka di aplikasi lain (seperti Excel). Silakan tutup dulu file tersebut.")
+    # SIMPAN MASTER DPA KE GOOGLE SHEETS
+    if st.button("💾 Simpan Perubahan ke Google Sheets", type="primary"):
+        st.session_state.master_dpa = edited_dpa
+        conn.update(worksheet="Master_DPA", data=st.session_state.master_dpa)
+        st.cache_data.clear() # Bersihkan cache agar langsung update
+        st.success("✅ Data Master DPA berhasil diperbarui dan disimpan secara online!")
+        st.rerun()
 
 elif menu_utama == "📝 Transaksi & Laporan":
     
@@ -374,6 +321,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                 vol_realisasi = col_vol.number_input("Volume Realisasi", min_value=0.0, step=1.0)
                 nominal = col_nom.number_input("Nominal (Rp)", min_value=0, step=50000)
                 
+                # SIMPAN DATA SPP KE GOOGLE SHEETS
                 if st.form_submit_button("Simpan Data (Save)"):
                     if nominal > 0:
                         data_baru = pd.DataFrame([{
@@ -388,8 +336,9 @@ elif menu_utama == "📝 Transaksi & Laporan":
                             [st.session_state.realisasi_spp, data_baru], 
                             ignore_index=True
                         )
-                        st.session_state.realisasi_spp.to_csv(DB_FILE, index=False)
-                        st.success(f"Data SPP untuk {kode} berhasil disimpan permanen!")
+                        conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
+                        st.cache_data.clear() # Bersihkan cache
+                        st.success(f"Data SPP untuk {kode} berhasil disimpan online!")
                     else:
                         st.error("Nominal tidak boleh 0.")
 
@@ -419,9 +368,11 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     teks_detail += f"📦 **Vol:** {vol:g} &nbsp;&nbsp;|&nbsp;&nbsp; 💰 **Nominal:** Rp {int(row['Nominal']):,}"
                     col2.write(teks_detail)
                     
+                    # HAPUS DATA SPP DARI GOOGLE SHEETS
                     if col3.button("🗑️ Hapus", key=f"del_{row['ID']}", type="secondary"):
                         st.session_state.realisasi_spp = st.session_state.realisasi_spp[st.session_state.realisasi_spp['ID'] != row['ID']]
-                        st.session_state.realisasi_spp.to_csv(DB_FILE, index=False)
+                        conn.update(worksheet="Data_SPP", data=st.session_state.realisasi_spp)
+                        st.cache_data.clear()
                         st.rerun()
                 st.divider()
 
@@ -430,7 +381,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
         st.subheader("Cetak Laporan Perkembangan Pelaksanaan Kegiatan")
         
         if 'master_dpa' not in st.session_state or st.session_state.master_dpa.empty:
-            st.warning("⚠️ Data Master DPA belum tersedia. Pastikan file Master_DPA.csv sudah benar.")
+            st.warning("⚠️ Data Master DPA belum tersedia.")
         else:
             with st.expander("📝 Pengaturan Header & Waktu", expanded=True):
                 rc1, rc2 = st.columns(2)
@@ -447,7 +398,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
             
             pilihan_kegiatan = ["ALL"] + df_dpa['Kode_Rekening'].tolist()
             kode_trigger = st.multiselect(
-                "Pilih Kegiatan yang akan dicetak (Bisa pilih ALL atau tambah satu per satu):", 
+                "Pilih Kegiatan yang akan dicetak:", 
                 options=pilihan_kegiatan,
                 default=["ALL"],
                 format_func=format_dropdown
@@ -481,7 +432,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                         st.warning("Tidak ada data DPA untuk bidang tersebut.")
                     else:
                         pdf_bytes, nama_file = generate_laporan_pdf(
-                            df_final, pilihan_bulan, pilihan_tahun, 
+                            df_final, tgl_mulai, tgl_akhir, 
                             nama_desa, nama_kec, nama_kab, nama_prov, nama_ppkd_cetak, "LAPORAN PERKEMBANGAN PELAKSANAAN KEGIATAN DAN ANGGARAN"
                         )
                         
@@ -492,14 +443,14 @@ elif menu_utama == "📝 Transaksi & Laporan":
                             mime="application/pdf",
                             type="primary"
                         )
-                        st.success(f"Tabel Laporan dari {tgl_mulai.strftime('%d-%m-%Y')} s/d {tgl_akhir.strftime('%d-%m-%Y')} berhasil di-generate!")
+                        st.success(f"Tabel Laporan berhasil di-generate!")
 
     # --- TAB 4: PRINT LAP AKHIR SESUAI FORMAT GAMBAR ---
     with tab4:
         st.subheader("Cetak Laporan Akhir Pelaksanaan Kegiatan")
         
         if 'master_dpa' not in st.session_state or st.session_state.master_dpa.empty:
-            st.warning("⚠️ Data Master DPA belum tersedia. Pastikan file Master_DPA.csv sudah benar.")
+            st.warning("⚠️ Data Master DPA belum tersedia.")
         else:
             with st.expander("📝 Pengaturan Header & Waktu", expanded=True):
                 rc1, rc2 = st.columns(2)
@@ -516,7 +467,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
             
             pilihan_kegiatan_akhir = ["ALL"] + df_dpa['Kode_Rekening'].tolist()
             kode_trigger_akhir = st.multiselect(
-                "Pilih Kegiatan yang akan dicetak (Bisa pilih ALL atau tambah satu per satu):", 
+                "Pilih Kegiatan yang akan dicetak:", 
                 options=pilihan_kegiatan_akhir,
                 default=["ALL"],
                 format_func=format_dropdown,
@@ -551,7 +502,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                         st.warning("Tidak ada data DPA untuk bidang tersebut.")
                     else:
                         pdf_bytes, nama_file = generate_laporan_pdf(
-                            df_final, pilihan_bulan_akhir, pilihan_tahun_akhir, 
+                            df_final, tgl_mulai_akhir, tgl_akhir_akhir, 
                             nama_desa_akhir, nama_kec_akhir, nama_kab_akhir, nama_prov_akhir, nama_ppkd_cetak, "LAPORAN AKHIR PELAKSANAAN KEGIATAN DAN ANGGARAN"
                         )
                         
@@ -563,4 +514,4 @@ elif menu_utama == "📝 Transaksi & Laporan":
                             type="primary",
                             key="btn_dl_tab4"
                         )
-                        st.success(f"Tabel Laporan Akhir dari {tgl_mulai_akhir.strftime('%d-%m-%Y')} s/d {tgl_akhir_akhir.strftime('%d-%m-%Y')} berhasil di-generate!")
+                        st.success(f"Tabel Laporan Akhir berhasil di-generate!")
