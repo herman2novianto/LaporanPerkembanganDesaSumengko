@@ -433,11 +433,13 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     spp_all = st.session_state.realisasi_spp.copy()
                     
                     if not spp_all.empty:
-                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP']).dt.date
+                        # Tambahkan errors='coerce' dan hapus baris yang bukan tanggal (NaT)
+                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP'], errors='coerce').dt.date
+                        spp_all = spp_all.dropna(subset=['Tanggal_SPP'])
+                        
                         spp_filter_waktu = spp_all[(spp_all['Tanggal_SPP'] >= tgl_mulai) & (spp_all['Tanggal_SPP'] <= tgl_akhir)]
                         spp_grouped = spp_filter_waktu.groupby("Kode_Rekening")[["Nominal", "Vol_Realisasi"]].sum().reset_index()
-                    else:
-                        spp_grouped = pd.DataFrame(columns=["Kode_Rekening", "Nominal", "Vol_Realisasi"])
+
                     
                     df_final = pd.merge(df_laporan_bidang, spp_grouped, on="Kode_Rekening", how="left")
                     df_final['Nominal'] = df_final['Nominal'].fillna(0)
@@ -503,11 +505,12 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     spp_all = st.session_state.realisasi_spp.copy()
                     
                     if not spp_all.empty:
-                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP']).dt.date
+                        # Tambahkan errors='coerce' dan hapus baris yang bukan tanggal (NaT)
+                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP'], errors='coerce').dt.date
+                        spp_all = spp_all.dropna(subset=['Tanggal_SPP'])
+                        
                         spp_filter_waktu = spp_all[(spp_all['Tanggal_SPP'] >= tgl_mulai_akhir) & (spp_all['Tanggal_SPP'] <= tgl_akhir_akhir)]
                         spp_grouped = spp_filter_waktu.groupby("Kode_Rekening")[["Nominal", "Vol_Realisasi"]].sum().reset_index()
-                    else:
-                        spp_grouped = pd.DataFrame(columns=["Kode_Rekening", "Nominal", "Vol_Realisasi"])
                     
                     df_final = pd.merge(df_laporan_bidang, spp_grouped, on="Kode_Rekening", how="left")
                     df_final['Nominal'] = df_final['Nominal'].fillna(0)
