@@ -449,7 +449,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                         st.warning("Tidak ada data DPA untuk bidang tersebut.")
                     else:
                         pdf_bytes, nama_file = generate_laporan_pdf(
-                            df_final, tgl_mulai, tgl_akhir, 
+                            df_final, pilihan_bulan, pilihan_tahun, 
                             nama_desa, nama_kec, nama_kab, nama_prov, nama_ppkd_cetak, "LAPORAN PERKEMBANGAN PELAKSANAAN KEGIATAN DAN ANGGARAN"
                         )
                         
@@ -520,7 +520,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                         st.warning("Tidak ada data DPA untuk bidang tersebut.")
                     else:
                         pdf_bytes, nama_file = generate_laporan_pdf(
-                            df_final, tgl_mulai_akhir, tgl_akhir_akhir, 
+                            df_final, pilihan_bulan_akhir, pilihan_tahun_akhir, 
                             nama_desa_akhir, nama_kec_akhir, nama_kab_akhir, nama_prov_akhir, nama_ppkd_cetak, "LAPORAN AKHIR PELAKSANAAN KEGIATAN DAN ANGGARAN"
                         )
                         
