@@ -243,8 +243,9 @@ def generate_laporan_pdf(df_laporan, bulan, tahun, desa, kecamatan, kabupaten, p
 # ==========================================
 # 4. ANTARMUKA PENGGUNA (UI)
 # ==========================================
-st.set_page_config(page_title="Keuangan Desa", layout="wide")
-st.title("APLIKASI MEMBUAT LAPORAN PERKEMBANGAN DAN AKHIR DESA SUMENGKO")
+st.set_page_config(page_title="Laporan Desa Sumengko", layout="wide")
+st.title("APLIKASI PEMBUAT LAP PERKEMBANGAN & AKHIR-DESA SUMENGKO")
+st.title("tolong ganti user login dulu sebelum input atau print")
 
 # SIMULASI LOGIN
 user_email = st.sidebar.selectbox("Simulasi Login (Security Filter):", list(USERS.keys()))
