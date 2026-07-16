@@ -48,7 +48,7 @@ def bersihkan_rupiah(teks):
             teks_str = teks_str.replace(".", "")
             
         return float(teks_str)
-    except:
+    except (ValueError, TypeError, AttributeError):
         return 0.0
 
 # ==========================================
