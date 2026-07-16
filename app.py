@@ -48,6 +48,9 @@ def init_db():
     if 'master_dpa' not in st.session_state:
         df_dpa = conn.read(worksheet="Master_DPA", ttl=0)
         
+        # --- TAMBAHAN KODE PELINDUNG: Bersihkan spasi gaib di nama kolom ---
+        df_dpa.columns = df_dpa.columns.str.strip()
+        
         # Bersihkan data jika ada kolom kosong dari Excel
         df_dpa = df_dpa.dropna(subset=['Kode_Rekening'])
         df_dpa['Kode_Rekening'] = df_dpa['Kode_Rekening'].astype(str)
@@ -62,6 +65,9 @@ def init_db():
     # 2. BACA FILE DATA REALISASI (SPP) DARI GOOGLE SHEETS
     if 'realisasi_spp' not in st.session_state:
         df_spp = conn.read(worksheet="Data_SPP", ttl=0)
+        
+        # --- TAMBAHAN KODE PELINDUNG: Bersihkan spasi gaib di nama kolom ---
+        df_spp.columns = df_spp.columns.str.strip()
         
         # Jika sheet masih kosong melompong, buatkan strukturnya
         if df_spp.empty:
