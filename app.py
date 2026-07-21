@@ -18,15 +18,17 @@ USERS = {
     "galuhmawati@gmail.com": "5"
 }
 
-# Mapping PPKD berdasarkan digit pertama Kode Rekening
-PEMETAAN_PPKD = {
-    "1": "Lugas Khalid Maulana",
-    "2": "Puspita Sari Handayani, SE",
-    "3": "Agus Setiawan, Spd",
-    "4": "Ramli Nur Aziza",
-    "5": "Galuh Rismawati"
+# --- TAMBAHAN BARU: KONFIGURASI PASSWORD ---
+# Silakan ganti password di bawah ini sesuai keinginan Anda
+PASSWORDS = {
+    "admin.desa@gmail.com": "admin999",
+    "email.kades@gmail.com": "kades999",
+    "lugaskhalidmaulana@gmail.com": "lugas111",
+    "sarihpuspita@gmail.com": "puspita222",
+    "assegafsetiawan2018@gmail.com": "agus333",
+    "ramlinuraziza@gmail.com": "ramli444",
+    "galuhmawati@gmail.com": "galuh555"
 }
-
 # ==========================================
 # FUNGSI PEMBERSIH ANGKA
 # ==========================================
@@ -99,7 +101,6 @@ def init_db():
             
         st.session_state.realisasi_spp = df_spp
 
-init_db()
 
 # ==========================================
 # 3. FUNGSI GENERATE PDF
@@ -255,15 +256,60 @@ def generate_laporan_pdf(df_laporan, bulan, tahun, desa, kecamatan, kabupaten, p
         return f.read(), filename
 
 # ==========================================
-# 4. ANTARMUKA PENGGUNA (UI)
+# 4. ANTARMUKA PENGGUNA (UI) & SISTEM LOGIN
 # ==========================================
 st.set_page_config(page_title="Laporan Desa Sumengko", layout="wide")
-st.title("APLIKASI PEMBUAT LAP PERKEMBANGAN & AKHIR-DESA SUMENGKO")
-st.title("tolong ganti user login dulu sebelum input atau print")
 
-# SIMULASI LOGIN
-user_email = st.sidebar.selectbox("Simulasi Login (Security Filter):", list(USERS.keys()))
+# --- INISIALISASI SESSION STATE LOGIN ---
+if 'logged_in' not in st.session_state:
+    st.session_state['logged_in'] = False
+if 'user_email' not in st.session_state:
+    st.session_state['user_email'] = ""
+
+# --- HALAMAN LOGIN (MENGHALANGI AKSES JIKA BELUM LOGIN) ---
+if not st.session_state['logged_in']:
+    st.title("🔐 Login Sistem Keuangan Desa")
+    st.info("Silakan login terlebih dahulu untuk mengakses aplikasi.")
+    
+    # Form Login
+    with st.form("form_login"):
+        email_input = st.selectbox("Pilih Email / Username:", list(USERS.keys()))
+        password_input = st.text_input("Password:", type="password") # Teks akan disamarkan menjadi titik-titik
+        btn_login = st.form_submit_button("Login")
+        
+        if btn_login:
+            # Pengecekan kecocokan password
+            if PASSWORDS.get(email_input) == password_input:
+                st.session_state['logged_in'] = True
+                st.session_state['user_email'] = email_input
+                st.success("✅ Login berhasil! Memuat aplikasi...")
+                st.rerun() # Refresh halaman untuk masuk ke aplikasi utama
+            else:
+                st.error("❌ Password salah! Silakan coba lagi.")
+    
+    st.stop() # SANGAT PENTING: Hentikan semua kode di bawah ini jika belum login!
+
+# ==========================================
+# APLIKASI UTAMA (HANYA JALAN JIKA SUDAH LOGIN)
+# ==========================================
+
+# Tarik data dari Google Sheets HANYA setelah login sukses
+init_db()
+
+st.title("APLIKASI PEMBUAT LAP PERKEMBANGAN & AKHIR-DESA SUMENGKO")
+
+# Mengambil data dari user yang sedang login
+user_email = st.session_state['user_email']
 hak_akses = USERS[user_email]
+
+# SIDEBAR: Info Akun & Tombol Logout
+st.sidebar.markdown(f"👤 **Login sebagai:**\n{user_email}")
+if st.sidebar.button("🚪 Logout", type="primary"):
+    st.session_state['logged_in'] = False
+    st.session_state['user_email'] = ""
+    st.cache_data.clear()
+    st.rerun()
+st.sidebar.markdown("---")
 
 if hak_akses == "ALL":
     st.sidebar.info("Akses: Admin / Kades (Melihat Semua Data)")
@@ -276,7 +322,6 @@ if hak_akses != "ALL":
     df_dpa = df_dpa[df_dpa['Kode_Rekening'].str.startswith(hak_akses)]
 
 # NAVIGASI SIDEBAR
-st.sidebar.markdown("---")
 if hak_akses == "ALL":
     menu_utama = st.sidebar.radio("📂 MENU UTAMA", ["📝 Transaksi & Laporan", "⚙️ Kelola Master DPA"])
 else:
