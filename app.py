@@ -29,6 +29,17 @@ PASSWORDS = {
     "ramlinuraziza@gmail.com": "ramli444",
     "galuhmawati@gmail.com": "galuh555"
 }
+
+# --- KODE YANG SEMPAT HILANG (KEMBALIKAN KODE INI) ---
+# Mapping PPKD berdasarkan digit pertama Kode Rekening
+PEMETAAN_PPKD = {
+    "1": "Lugas Khalid Maulana",
+    "2": "Puspita Sari Handayani, SE",
+    "3": "Agus Setiawan, Spd",
+    "4": "Ramli Nur Aziza",
+    "5": "Galuh Rismawati"
+}
+
 # ==========================================
 # FUNGSI PEMBERSIH ANGKA
 # ==========================================
