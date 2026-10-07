@@ -13,7 +13,7 @@ USERS = {
     "email.kades@gmail.com": "ALL",
     "lugaskhalidmaulana@gmail.com": "1",
     "sarihpuspita@gmail.com": "2",
-    "assegafsetiawan2018@gmail.com": "3",
+    "syahshoim7@gmail.com": "3",
     "ramlinuraziza@gmail.com": "4",
     "galuhmawati@gmail.com": "5"
 }
@@ -25,7 +25,7 @@ PASSWORDS = {
     "email.kades@gmail.com": "kades999",
     "lugaskhalidmaulana@gmail.com": "lugas111",
     "sarihpuspita@gmail.com": "puspita222",
-    "assegafsetiawan2018@gmail.com": "agus333",
+    "syahshoim7@gmail.com": "shoim333",
     "ramlinuraziza@gmail.com": "ramli444",
     "galuhmawati@gmail.com": "galuh555"
 }
@@ -35,7 +35,7 @@ PASSWORDS = {
 PEMETAAN_PPKD = {
     "1": "Lugas Khalid Maulana",
     "2": "Puspita Sari Handayani, SE",
-    "3": "Agus Setiawan, Spd",
+    "3": "Shoim Syah",
     "4": "Ramli Nur Aziza",
     "5": "Galuh Rismawati"
 }
