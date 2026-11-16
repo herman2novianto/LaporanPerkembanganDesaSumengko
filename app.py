@@ -326,7 +326,14 @@ if hak_akses == "ALL":
     st.sidebar.info("Akses: Admin / Kades (Melihat Semua Data)")
 else:
     st.sidebar.success(f"Akses: Bidang {hak_akses}")
-
+    
+if st.sidebar.button("🔄 Refresh Data Sheets"):
+    for key in ['master_dpa', 'realisasi_spp']:
+        if key in st.session_state:
+            del st.session_state[key]
+    st.cache_data.clear()
+    st.rerun()
+    
 # Relasi Data
 df_dpa = st.session_state.master_dpa
 if hak_akses != "ALL":
@@ -411,7 +418,7 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     if nominal > 0:
                         data_baru = pd.DataFrame([{
                             "ID": str(uuid.uuid4())[:8],
-                            "Tanggal_SPP": tgl, "No_SPP": no_spp, 
+                            "Tanggal_SPP": tgl.strftime("%d/%m/%Y"),
                             "Kode_Rekening": kode, "Nominal": nominal, 
                             "Vol_Realisasi": vol_realisasi, 
                             "User_Email": user_email
@@ -504,7 +511,12 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     
                     if not spp_all.empty:
                         # Tambahkan errors='coerce' dan hapus baris yang bukan tanggal (NaT)
-                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP'], errors='coerce').dt.date
+                        spp_all['Tanggal_SPP'] = pd.to_datetime(
+                            spp_all['Tanggal_SPP'], 
+                            dayfirst=True, 
+                            format='mixed', 
+                            errors='coerce'
+                            ).dt.date
                         spp_all = spp_all.dropna(subset=['Tanggal_SPP'])
                         
                         spp_filter_waktu = spp_all[(spp_all['Tanggal_SPP'] >= tgl_mulai) & (spp_all['Tanggal_SPP'] <= tgl_akhir)]
@@ -576,7 +588,12 @@ elif menu_utama == "📝 Transaksi & Laporan":
                     
                     if not spp_all.empty:
                         # Tambahkan errors='coerce' dan hapus baris yang bukan tanggal (NaT)
-                        spp_all['Tanggal_SPP'] = pd.to_datetime(spp_all['Tanggal_SPP'], errors='coerce').dt.date
+                        spp_all['Tanggal_SPP'] = pd.to_datetime(
+                            spp_all['Tanggal_SPP'], 
+                            dayfirst=True, 
+                            format='mixed', 
+                            errors='coerce'
+                        ).dt.date
                         spp_all = spp_all.dropna(subset=['Tanggal_SPP'])
                         
                         spp_filter_waktu = spp_all[(spp_all['Tanggal_SPP'] >= tgl_mulai_akhir) & (spp_all['Tanggal_SPP'] <= tgl_akhir_akhir)]
